@@ -16,6 +16,10 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TinderAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TinderAppTests.m */; };
+		9443F3E5DF6F4AF0B2447B53 /* FruitsAndVegetables.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4587CD8CAB6430AA7511AC1 /* FruitsAndVegetables.ttf */; };
+		8634F1FFA3504E76950B6289 /* FruitsAndVegetablesBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C5A0F2AD3894180AF540292 /* FruitsAndVegetablesBold.ttf */; };
+		112711EB0BDA40FDBECBD87E /* FruitsAndVegetablesBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A5865371D945DEA991B5F1 /* FruitsAndVegetablesBoldItalic.ttf */; };
+		2767C911A2724206BBD071CA /* FruitsAndVegetablesItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B95F23DDC7DE432FB464F9EA /* FruitsAndVegetablesItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		2D02E4901E0B4A5D006451C7 /* TinderApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TinderApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		C4587CD8CAB6430AA7511AC1 /* FruitsAndVegetables.ttf */ = {isa = PBXFileReference; name = "FruitsAndVegetables.ttf"; path = "../assets/fonts/FruitsAndVegetables.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6C5A0F2AD3894180AF540292 /* FruitsAndVegetablesBold.ttf */ = {isa = PBXFileReference; name = "FruitsAndVegetablesBold.ttf"; path = "../assets/fonts/FruitsAndVegetablesBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		43A5865371D945DEA991B5F1 /* FruitsAndVegetablesBoldItalic.ttf */ = {isa = PBXFileReference; name = "FruitsAndVegetablesBoldItalic.ttf"; path = "../assets/fonts/FruitsAndVegetablesBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B95F23DDC7DE432FB464F9EA /* FruitsAndVegetablesItalic.ttf */ = {isa = PBXFileReference; name = "FruitsAndVegetablesItalic.ttf"; path = "../assets/fonts/FruitsAndVegetablesItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +148,7 @@
 				00E356EF1AD99517003FC87E /* TinderAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				A8401B055C32453D9E2DDD59 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -156,6 +165,18 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		A8401B055C32453D9E2DDD59 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				C4587CD8CAB6430AA7511AC1 /* FruitsAndVegetables.ttf */,
+				6C5A0F2AD3894180AF540292 /* FruitsAndVegetablesBold.ttf */,
+				43A5865371D945DEA991B5F1 /* FruitsAndVegetablesBoldItalic.ttf */,
+				B95F23DDC7DE432FB464F9EA /* FruitsAndVegetablesItalic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -295,6 +316,10 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				9443F3E5DF6F4AF0B2447B53 /* FruitsAndVegetables.ttf in Resources */,
+				8634F1FFA3504E76950B6289 /* FruitsAndVegetablesBold.ttf in Resources */,
+				112711EB0BDA40FDBECBD87E /* FruitsAndVegetablesBoldItalic.ttf in Resources */,
+				2767C911A2724206BBD071CA /* FruitsAndVegetablesItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
