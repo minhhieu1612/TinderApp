@@ -8,15 +8,13 @@
 
 import React from 'react';
 import {StyleSheet, View, Text, Image, ActivityIndicator} from 'react-native';
-import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 // import LinearGradient from 'react-native-linear-gradient';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Home from './screens/Home';
-import Favorite from './screens/Favorite';
-import {COLORS} from './constants/styles';
-
+import Home from './src/screens/Home';
+import Favorite from './src/screens/Favorite';
+import {COLORS} from './src/constants/styles';
 const Tab = createBottomTabNavigator();
 
 const App: () => React$Node = () => {

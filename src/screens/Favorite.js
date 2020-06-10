@@ -1,9 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-export default function Favorite(params) {
+import {FavoriteContainer} from '../containers/Favorites';
+export default function FavoriteScreen({route}) {
   return (
     <View style={styles.container}>
-      <Text>Favorite Screen</Text>
+      <FavoriteContainer />
     </View>
   );
 }

@@ -3,7 +3,7 @@ import {View, StyleSheet, Dimensions, ActivityIndicator} from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import {Icon, Button as ButtonUI} from 'react-native-elements';
 import {COLORS} from '../constants/styles';
-import usersData from '../data/users.json';
+import usersData from '../data/users';
 import Card from '../components/Card';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
