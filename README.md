@@ -34,4 +34,4 @@ _( Tinder with react-native-deck-swiper and redux-saga for async data offline ).
 
 Bonus 😂😂
 
-<img src="/previ⚒ew/Card-swipe.gif" alt="Card swipe" style="width:250px;"/> <img src="/preview/Available-offline.gif" alt="Available offline" style="width:250px;"/>
+<img src="/previ⚒🛠ew/Card-swipe.gif" alt="Card swipe" style="width:250px;"/> <img src="/preview/Available-offline.gif" alt="Available offline" style="width:250px;"/>
