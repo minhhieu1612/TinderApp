@@ -1,13 +1,15 @@
 import React from 'react';
 import Favorites from '../../components/Favorites';
-import {deleteFavorite} from './actions';
+import {deleteFavorite, fetchRequest} from './actions';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+
 const FavoriteContainer = (props) => {
   return (
     <Favorites
-      deleteFavorite={props.deleteFavorite}
       favorites={props.favorites}
+      onFetchFavorites={props.onFetchFavorites}
+      onDeleteFavorite={props.onDeleteFavorite}
     />
   );
 };
@@ -15,7 +17,7 @@ const FavoriteContainer = (props) => {
 FavoriteContainer.propTypes = {
   favorites: PropTypes.arrayOf(
     PropTypes.shape({
-      key: PropTypes.number.isRequired,
+      salt: PropTypes.string.isRequired,
       name: PropTypes.shape({
         title: PropTypes.string.isRequired,
         last: PropTypes.string.isRequired,
@@ -31,16 +33,16 @@ FavoriteContainer.propTypes = {
       registered: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  deleteFavorite: PropTypes.func.isRequired,
+  onDeleteFavorite: PropTypes.func.isRequired,
+  onFetchFavorites: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {
-  console.log('sta', state);
-
   return {favorites: state.favorites};
 };
 const mapDispatchToProps = (distpatch) => ({
-  deleteFavorite: (key) => distpatch(deleteFavorite(key)),
+  onDeleteFavorite: (key) => distpatch(deleteFavorite(key)),
+  onFetchFavorites: () => distpatch(fetchRequest()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FavoriteContainer);

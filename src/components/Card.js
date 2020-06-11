@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {View, Image, Text, StyleSheet} from 'react-native';
+import {View, Image, Text, StyleSheet, ActivityIndicator} from 'react-native';
 import {Transitioning, Transition} from 'react-native-reanimated';
 import {COLORS} from '../constants/styles';
 import {Icon} from 'react-native-elements';
+import getValue from '../helpers/getValue';
 
 const ANIMATION_DURATION = 200;
 
@@ -30,14 +31,20 @@ const transition = (
 );
 
 const Card = ({card, transitionRef}) => {
-  // console.log(card.picture.replace(/^http:\/\//i, 'https://'));
   const [active, setActive] = useState(0);
-  const {name, location, picture, phone, registered, gender} = card;
+  const name = getValue(card, 'name'),
+    location = getValue(card, 'location'),
+    picture = getValue(card, 'picture'),
+    phone = getValue(card, 'phone'),
+    registered = getValue(card, 'registered'),
+    gender = getValue(card, 'gender');
+  const fullName = name ? `${name.title} ${name.last} ${name.first}` : name;
+  const address = location ? location.street : '';
   const arrDetail = [
     {
       key: 1,
       title: 'My name is',
-      content: `${name.title} ${name.last} ${name.first}`,
+      content: fullName,
       icon: {name: 'face'},
     },
     {
@@ -49,7 +56,7 @@ const Card = ({card, transitionRef}) => {
     {
       key: 3,
       title: 'My address is',
-      content: `${location.street}`,
+      content: address,
       icon: {name: 'location-on'},
     },
     {
@@ -65,14 +72,14 @@ const Card = ({card, transitionRef}) => {
       icon: {name: 'lock'},
     },
   ];
+  const imgSource = picture
+    ? {uri: picture.replace(/^http:\/\//i, 'https://')}
+    : require('./placeholder.jpg');
   return (
     <View style={styles.card}>
       <View style={styles.cardHeader} />
       <View style={styles.wrapImage}>
-        <Image
-          source={{uri: picture.replace(/^http:\/\//i, 'https://')}}
-          style={styles.cardImage}
-        />
+        <Image source={imgSource} style={styles.cardImage} />
       </View>
       <View style={styles.cardBody}>
         <Transitioning.View
@@ -113,11 +120,16 @@ const styles = StyleSheet.create({
     flex: 0.8,
     backgroundColor: '#fff',
     borderRadius: 5,
-    shadowRadius: 30,
-    shadowOpacity: 0.6,
     shadowColor: '#000',
-    shadowOffset: {width: 200, height: 20},
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+    elevation: 5,
     alignItems: 'center',
+    zIndex: 0,
   },
   cardHeader: {
     flex: 0.35,
@@ -143,6 +155,10 @@ const styles = StyleSheet.create({
   },
   cardImage: {
     flex: 1,
+    backgroundColor: COLORS.DARK(4),
+    width: 158,
+    height: 158,
+    alignSelf: 'stretch',
     borderRadius: 100,
     resizeMode: 'cover',
   },

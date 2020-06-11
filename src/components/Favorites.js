@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   StyleSheet,
@@ -6,75 +6,130 @@ import {
   Image,
   Text,
   Dimensions,
-  ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import {COLORS} from '../constants/styles';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {Icon} from 'react-native-elements';
+import getValue from '../helpers/getValue';
 const windowWidth = Dimensions.get('window').width;
-export default function Favorites(props) {
-  console.log('hel', props.favorites);
+const Favorites = ({favorites, onFetchFavorites, onDeleteFavorite}) => {
+  useEffect(() => {
+    onFetchFavorites();
+  }, [onFetchFavorites]);
 
-  return (
-    <SafeAreaView>
-      <FlatList
-        contentContainerStyle={styles.list}
-        data={props.favorites}
-        keyExtractor={({item, index}) => index}
-        renderItem={({item, index}) => (
-          <View style={styles.item}>
+  return favorites.length ? (
+    <FlatList
+      contentContainerStyle={styles.list}
+      data={favorites}
+      keyExtractor={(item, index) => item.salt}
+      renderItem={({item}) => {
+        const perName = getValue(item, 'name'),
+          picture = getValue(item, 'picture'),
+          perLocation = getValue(item, 'location'),
+          perPhone = getValue(item, 'phone');
+        const fullName = perName
+          ? `${perName.title} ${perName.last} ${perName.first}`
+          : '';
+        const address = perLocation
+          ? `${perLocation.street}, ${perLocation.state}`
+          : '';
+        const srcImg = picture ? {uri: picture} : require('./placeholder.jpg');
+        return (
+          <TouchableOpacity
+            style={styles.item}
+            onPress={() => {
+              onDeleteFavorite(item.salt);
+            }}>
             <View style={styles.wrapImage}>
-              <Image source={{uri: item.picture}} style={styles.imageRounded} />
+              <Image source={srcImg} style={styles.imageRounded} />
             </View>
             <View style={styles.content}>
-              <Text style={styles.title}>{item.name.title}</Text>
+              <Text style={styles.title}>{fullName}</Text>
+              <View style={styles.wrapDetail}>
+                <Icon
+                  type="material"
+                  name="phone"
+                  size={18}
+                  color={COLORS.DARK(6)}
+                />
+                <Text style={styles.textGray}> {perPhone}</Text>
+              </View>
+              <View style={styles.wrapDetail}>
+                <Icon
+                  type="material"
+                  name="location-on"
+                  size={18}
+                  color={COLORS.DARK(6)}
+                />
+                <Text style={styles.textGray}> {address}</Text>
+              </View>
             </View>
-          </View>
-        )}
-      />
-    </SafeAreaView>
+          </TouchableOpacity>
+        );
+      }}
+    />
+  ) : (
+    <View style={styles.noData}>
+      <Text style={styles.textNoData}>
+        You don't have favorite person yet!!!
+      </Text>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  list: {
-    // flex: 0.25,
-    // justifyContent: 'center',
-    alignItems: 'flex-start',
+  noData: {
+    alignItems: 'center',
+    justifyContent: 'center',
     width: windowWidth,
-    backgroundColor: 'green',
+    height: windowWidth,
+  },
+  textNoData: {
+    fontSize: 16,
+    color: COLORS.DARK(7),
+  },
+  list: {
+    width: windowWidth,
   },
   item: {
-    flex: 0.25,
+    flex: 1,
     flexDirection: 'row',
-    alignSelf: 'center',
-    borderWidth: 1,
-    height: Dimensions.get('window').height,
-    borderColor: 'black',
-    padding: 5,
-    backgroundColor: 'red',
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.DARK(5),
+    height: 100,
+    padding: 10,
   },
   wrapImage: {
     flex: 0.2,
-    alignSelf: 'stretch',
-    // alignItems: 'center',
-    padding: 5,
-    // borderRadius: 100,
-    borderColor: COLORS.DARK(3),
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 6,
+    borderRadius: 100,
+    borderColor: COLORS.DARK(5),
     borderWidth: 1,
   },
   imageRounded: {
-    width: windowWidth / 4 - 20,
-    height: windowWidth / 4 - 20,
+    width: 68,
+    height: 68,
+    borderRadius: 100,
     resizeMode: 'contain',
   },
   content: {
     flex: 0.8,
-    alignItems: 'center',
-    // alignSelf: 'flex-start',
     flexDirection: 'column',
+    marginLeft: 10,
   },
   title: {
-    fontSize: 20,
-    color: COLORS.DARK(8),
+    fontSize: 22,
+    fontWeight: '600',
+  },
+  wrapDetail: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  textGray: {
+    color: COLORS.DARK(6),
   },
 });
+
+export default Favorites;

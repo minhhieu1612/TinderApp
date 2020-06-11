@@ -1,18 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
 import {FavoriteContainer} from '../containers/Favorites';
-export default function FavoriteScreen({route}) {
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
+export default function FavoriteScreen() {
   return (
-    <View style={styles.container}>
-      <FavoriteContainer />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <FavoriteContainer />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
