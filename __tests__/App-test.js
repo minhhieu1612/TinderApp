@@ -2,33 +2,28 @@
  * @format
  */
 
-// import {View} from 'react-native';
 import React from 'react';
+import 'react-native';
 import App from '../App';
-// import jest from 'jest';
-
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-// jest.mock('react-native-reanimated', () => {
-//   return {
-//     Value: jest.fn(),
-//     event: jest.fn(),
-//     add: jest.fn(),
-//     eq: jest.fn(),
-//     set: jest.fn(),
-//     cond: jest.fn(),
-//     interpolate: jest.fn(),
-//     View: View,
-//     Extrapolate: {CLAMP: jest.fn()},
-//     Transition: {
-//       Together: 'Together',
-//       Out: 'Out',
-//       In: 'In',
-//     },
-//   };
-// });
+import {Provider} from 'react-redux';
+import {compose, applyMiddleware, createStore} from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import rootReducer from '../src/reducers';
+import rootSaga from '../src/sagas';
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+  rootReducer,
+  compose(applyMiddleware(sagaMiddleware)),
+);
+sagaMiddleware.run(rootSaga);
 
 it('renders correctly', () => {
-  renderer.create(<App />);
+  renderer.create(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+  );
   console.log('pass');
 });

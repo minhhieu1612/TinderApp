@@ -12,5 +12,9 @@ function* watchAndLog() {
 }
 
 export default function* rootSaga() {
-  yield all([fork(users), fork(favorites), fork(watchAndLog)]);
+  yield all([
+    fork(users),
+    fork(favorites),
+    //  fork(watchAndLog)
+  ]);
 }
