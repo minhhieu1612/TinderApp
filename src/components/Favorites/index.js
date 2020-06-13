@@ -8,9 +8,9 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
-import {COLORS} from '../constants/styles';
 import {Icon} from 'react-native-elements';
-import getValue from '../helpers/getValue';
+import {COLORS} from '../../constants/styles';
+import getValue from '../../helpers/getValue';
 const windowWidth = Dimensions.get('window').width;
 const Favorites = ({favorites, onFetchFavorites, onDeleteFavorite}) => {
   useEffect(() => {

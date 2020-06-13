@@ -1,4 +1,4 @@
-import {put, call, fork, takeLatest, all, delay} from 'redux-saga/effects';
+import {put, call, fork, takeLatest, all} from 'redux-saga/effects';
 import ApiCaller from '../../helpers/ApiCaller';
 import {fetchRequest, fetchFaild, fetchSuccess} from './actions';
 import {loading, unload} from '../Loading/actions';

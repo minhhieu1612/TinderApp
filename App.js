@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-import {StyleSheet, View, Text, Image, ActivityIndicator} from 'react-native';
 // import LinearGradient from 'react-native-linear-gradient';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -50,7 +49,5 @@ const App: () => React$Node = () => {
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default App;

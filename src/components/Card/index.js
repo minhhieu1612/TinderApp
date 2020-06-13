@@ -1,36 +1,10 @@
 import React, {useState} from 'react';
-import {View, Image, Text, StyleSheet, ActivityIndicator} from 'react-native';
-import {Transitioning, Transition} from 'react-native-reanimated';
-import {COLORS} from '../constants/styles';
+import {View, Image, Text, StyleSheet} from 'react-native';
+import {COLORS} from '../../constants/styles';
 import {Icon} from 'react-native-elements';
-import getValue from '../helpers/getValue';
+import getValue from '../../helpers/getValue';
 
-const ANIMATION_DURATION = 200;
-
-const transition = (
-  <Transition.Sequence>
-    <Transition.Out
-      type="slide-bottom"
-      durationMs={ANIMATION_DURATION}
-      interpolation="easeIn"
-    />
-    <Transition.Together>
-      <Transition.In
-        type="fade"
-        durationMs={ANIMATION_DURATION}
-        delayMs={ANIMATION_DURATION / 2}
-      />
-      <Transition.In
-        type="slide-bottom"
-        durationMs={ANIMATION_DURATION}
-        delayMs={ANIMATION_DURATION / 2}
-        interpolation="easeOut"
-      />
-    </Transition.Together>
-  </Transition.Sequence>
-);
-
-const Card = ({card, transitionRef}) => {
+const Card = ({card}) => {
   const [active, setActive] = useState(0);
   const name = getValue(card, 'name'),
     location = getValue(card, 'location'),
@@ -82,17 +56,14 @@ const Card = ({card, transitionRef}) => {
         <Image source={imgSource} style={styles.cardImage} />
       </View>
       <View style={styles.cardBody}>
-        <Transitioning.View
-          ref={transitionRef}
-          transition={transition}
-          style={styles.bottomContainerMeta}>
+        <View style={styles.bottomContainerMeta}>
           <View style={styles.detail}>
             <Text style={styles.detailTitle}>{arrDetail[active].title}</Text>
             <Text style={styles.detailContent}>
               {arrDetail[active].content}
             </Text>
           </View>
-        </Transitioning.View>
+        </View>
         <View style={styles.listIcon}>
           <View style={styles.elementTop(active)} />
           {arrDetail.map(({icon, key}, index) => (
@@ -102,7 +73,6 @@ const Card = ({card, transitionRef}) => {
               name={icon.name}
               color={active === index ? COLORS.PRIMARY : COLORS.DARK(2)}
               onPress={() => {
-                transitionRef.current.animateNextTransition();
                 setActive(index);
               }}
               size={35}
@@ -182,7 +152,6 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    // marginBottom: 10,
   },
   detailTitle: {
     fontSize: 18,

@@ -2,12 +2,11 @@ import React, {useState, useEffect} from 'react';
 import {StyleSheet, Dimensions, View, ActivityIndicator} from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import {Icon, Button as ButtonUI} from 'react-native-elements';
-import {COLORS} from '../constants/styles';
-import Card from './Card';
+import {COLORS} from '../../constants/styles';
+import Card from '../Card';
 
 const windowWidth = Dimensions.get('window').width;
 const swiperRef = React.createRef();
-const transitionRef = React.createRef();
 
 const Home = ({onFetchUsers, usersData, onAddFavorite, loading}) => {
   // get data from api first
@@ -51,7 +50,7 @@ const Home = ({onFetchUsers, usersData, onAddFavorite, loading}) => {
               />
             </View>
           ) : (
-            <Card card={card} transitionRef={transitionRef} />
+            <Card card={card} />
           );
         }}
         onSwipedLeft={onSwipedLeft}

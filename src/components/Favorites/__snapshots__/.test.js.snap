@@ -1,0 +1,347 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Component Favorites 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "width": 750,
+    }
+  }
+  data={
+    Array [
+      Object {
+        "SSN": "578-55-1922",
+        "cell": "(511)-192-7949",
+        "dob": "458529607",
+        "email": "catherine.kelley56@example.com",
+        "gender": "female",
+        "location": Object {
+          "city": "springfield",
+          "state": "iowa",
+          "street": "1352 ninth st",
+          "zip": "96474",
+        },
+        "md5": "ec90a7ad03fbd883416460ebdf59bca1",
+        "name": Object {
+          "first": "catherine",
+          "last": "kelley",
+          "title": "miss",
+        },
+        "password": "susie",
+        "phone": "(724)-575-1036",
+        "picture": "http://api.randomuser.me/portraits/women/43.jpg",
+        "registered": "1409024352",
+        "salt": "CSr3dKeE",
+        "sha1": "c083947d97432acf0f9e107e2b5ca1c134fbed0a",
+        "sha256": "a4d5938460490956082af6182b7ecbb88bf3610a6e7b1f54649e2220976ff055",
+        "username": "greenrabbit328",
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "borderColor": "rgba(0,0,0,0.5)",
+            "borderWidth": 0.5,
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 100,
+            "opacity": 1,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "rgba(0,0,0,0.5)",
+              "borderRadius": 100,
+              "borderWidth": 1,
+              "flex": 0.2,
+              "justifyContent": "center",
+              "padding": 6,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "http://api.randomuser.me/portraits/women/43.jpg",
+              }
+            }
+            style={
+              Object {
+                "borderRadius": 100,
+                "height": 68,
+                "resizeMode": "contain",
+                "width": 68,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0.8,
+              "flexDirection": "column",
+              "marginLeft": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": "600",
+              }
+            }
+          >
+            miss kelley catherine
+          </Text>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                theme={
+                  Object {
+                    "colors": Object {
+                      "disabled": "hsl(208, 8%, 90%)",
+                      "divider": "#bcbbc1",
+                      "error": "#ff190c",
+                      "grey0": "#393e42",
+                      "grey1": "#43484d",
+                      "grey2": "#5e6977",
+                      "grey3": "#86939e",
+                      "grey4": "#bdc6cf",
+                      "grey5": "#e1e8ee",
+                      "greyOutline": "#bbb",
+                      "platform": Object {
+                        "android": Object {
+                          "error": "#f44336",
+                          "primary": "#2196f3",
+                          "secondary": "#9C27B0",
+                          "success": "#4caf50",
+                          "warning": "#ffeb3b",
+                        },
+                        "ios": Object {
+                          "error": "#ff3b30",
+                          "primary": "#007aff",
+                          "secondary": "#5856d6",
+                          "success": "#4cd964",
+                          "warning": "#ffcc00",
+                        },
+                      },
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#8F0CE8",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "justifyContent": "center",
+                    }
+                  }
+                >
+                  <Text
+                    allowFontScaling={false}
+                    brand={false}
+                    solid={false}
+                    style={
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.6000000000000001)",
+                          "fontSize": 18,
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                        },
+                        Object {
+                          "fontFamily": "Material Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                        Object {},
+                      ]
+                    }
+                    testID="iconIcon"
+                  >
+                    
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "rgba(0,0,0,0.6000000000000001)",
+                }
+              }
+            >
+               
+              (724)-575-1036
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                theme={
+                  Object {
+                    "colors": Object {
+                      "disabled": "hsl(208, 8%, 90%)",
+                      "divider": "#bcbbc1",
+                      "error": "#ff190c",
+                      "grey0": "#393e42",
+                      "grey1": "#43484d",
+                      "grey2": "#5e6977",
+                      "grey3": "#86939e",
+                      "grey4": "#bdc6cf",
+                      "grey5": "#e1e8ee",
+                      "greyOutline": "#bbb",
+                      "platform": Object {
+                        "android": Object {
+                          "error": "#f44336",
+                          "primary": "#2196f3",
+                          "secondary": "#9C27B0",
+                          "success": "#4caf50",
+                          "warning": "#ffeb3b",
+                        },
+                        "ios": Object {
+                          "error": "#ff3b30",
+                          "primary": "#007aff",
+                          "secondary": "#5856d6",
+                          "success": "#4cd964",
+                          "warning": "#ffcc00",
+                        },
+                      },
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#8F0CE8",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "justifyContent": "center",
+                    }
+                  }
+                >
+                  <Text
+                    allowFontScaling={false}
+                    brand={false}
+                    solid={false}
+                    style={
+                      Array [
+                        Object {
+                          "color": "rgba(0,0,0,0.6000000000000001)",
+                          "fontSize": 18,
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                        },
+                        Object {
+                          "fontFamily": "Material Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                        Object {},
+                      ]
+                    }
+                    testID="iconIcon"
+                  >
+                    
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "rgba(0,0,0,0.6000000000000001)",
+                }
+              }
+            >
+               
+              1352 ninth st, iowa
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
